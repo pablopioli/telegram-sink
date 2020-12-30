@@ -31,6 +31,6 @@ You can pass also an output template, the default template is
 [{Timestamp:HH:mm:ss} {Level:u3}] {Message}
 ```
 
-You can the the api key using the BotFather https://telegram.me/botfather
+You can get the api key using the BotFather https://telegram.me/botfather
 
-To get chat id follow the instructions stated in https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
+To get the chat id follow the instructions stated in https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
