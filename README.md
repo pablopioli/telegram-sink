@@ -28,7 +28,7 @@ new LoggerConfiguration()
 You can pass also an output template, the default template is
 
 ```csharp
-[{Timestamp:HH:mm:ss} {Level:u3}] {Message}
+[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message}
 ```
 
 You can get the api key using the BotFather https://telegram.me/botfather

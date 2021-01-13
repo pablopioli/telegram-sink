@@ -18,7 +18,7 @@ namespace TelegramSink
         private readonly string _chatId;
 
         private const string TelegramApiBaseUrl = "https://api.telegram.org";
-        private const string DefaultConsoleOutputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message}";
+        private const string DefaultConsoleOutputTemplate = "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message}";
 
         private static readonly HttpClient HttpClient = new HttpClient();
 
