@@ -1,16 +1,14 @@
 ﻿using Serilog.Events;
 using Serilog.Parsing;
-using System;
-using System.IO;
 
 namespace TelegramSink.Renderer
 {
     class TimestampTokenRenderer : OutputTemplateTokenRenderer
     {
         readonly PropertyToken _token;
-        readonly IFormatProvider _formatProvider;
+        readonly IFormatProvider? _formatProvider;
 
-        public TimestampTokenRenderer(PropertyToken token, IFormatProvider formatProvider)
+        public TimestampTokenRenderer(PropertyToken token, IFormatProvider? formatProvider)
         {
             _token = token;
             _formatProvider = formatProvider;

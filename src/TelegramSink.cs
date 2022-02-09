@@ -1,9 +1,6 @@
 ﻿using Serilog.Core;
 using Serilog.Debugging;
 using Serilog.Events;
-using System;
-using System.IO;
-using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using TelegramSink.Renderer;
@@ -20,13 +17,13 @@ namespace TelegramSink
         private const string TelegramApiBaseUrl = "https://api.telegram.org";
         private const string DefaultConsoleOutputTemplate = "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message}";
 
-        private static readonly HttpClient HttpClient = new HttpClient();
+        private static readonly HttpClient HttpClient = new();
 
         public TelegramSink(
             string apiKey,
             string chatId,
             LogEventLevel minimumLevel = LogEventLevel.Warning,
-            IFormatProvider formatProvider = null,
+            IFormatProvider? formatProvider = null,
             string outputTemplate = DefaultConsoleOutputTemplate)
         {
             if (string.IsNullOrEmpty(apiKey))

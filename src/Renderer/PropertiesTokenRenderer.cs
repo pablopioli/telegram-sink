@@ -1,21 +1,16 @@
 using Serilog.Events;
 using Serilog.Parsing;
-using System;
-using System.IO;
-using System.Linq;
 
 namespace TelegramSink.Renderer
 {
     class PropertiesTokenRenderer : OutputTemplateTokenRenderer
     {
         private readonly MessageTemplate _outputTemplate;
-        private readonly PropertyToken _token;
-        private readonly IFormatProvider _formatProvider;
+        private readonly IFormatProvider? _formatProvider;
 
-        public PropertiesTokenRenderer(PropertyToken token, MessageTemplate outputTemplate, IFormatProvider formatProvider)
+        public PropertiesTokenRenderer(MessageTemplate outputTemplate, IFormatProvider? formatProvider)
         {
             _outputTemplate = outputTemplate;
-            _token = token ?? throw new ArgumentNullException(nameof(token));
             _formatProvider = formatProvider;
         }
 

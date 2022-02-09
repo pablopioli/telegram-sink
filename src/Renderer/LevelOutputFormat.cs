@@ -40,10 +40,12 @@ namespace TelegramSink.Renderer
             new[] { "F", "FA", "FTL", "FATL" },
         };
 
-        public static string GetLevelMoniker(LogEventLevel value, string format = null)
+        public static string GetLevelMoniker(LogEventLevel value, string? format = null)
         {
             if (format is null || format.Length != 2 && format.Length != 3)
+            {
                 return Casing.Format(value.ToString(), format);
+            }
 
             // Using int.Parse() here requires allocating a string to exclude the first character prefix.
             // Junk like "wxy" will be accepted but produce benign results.
@@ -55,13 +57,18 @@ namespace TelegramSink.Renderer
             }
 
             if (width < 1)
+            {
                 return string.Empty;
+            }
 
             if (width > 4)
             {
                 var stringValue = value.ToString();
                 if (stringValue.Length > width)
+                {
                     stringValue = stringValue.Substring(0, width);
+                }
+
                 return Casing.Format(stringValue);
             }
 

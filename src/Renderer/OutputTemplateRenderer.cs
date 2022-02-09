@@ -3,9 +3,6 @@ using Serilog.Formatting;
 using Serilog.Formatting.Display;
 using Serilog.Parsing;
 using Serilog.Sinks.SystemConsole.Output;
-using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace TelegramSink.Renderer
 {
@@ -13,7 +10,7 @@ namespace TelegramSink.Renderer
     {
         readonly OutputTemplateTokenRenderer[] _renderers;
 
-        public OutputTemplateRenderer(string outputTemplate, IFormatProvider formatProvider)
+        public OutputTemplateRenderer(string outputTemplate, IFormatProvider? formatProvider)
         {
             if (outputTemplate is null)
             {
@@ -54,7 +51,7 @@ namespace TelegramSink.Renderer
                 }
                 else if (pt.PropertyName == "Properties")
                 {
-                    renderers.Add(new PropertiesTokenRenderer(pt, template, formatProvider));
+                    renderers.Add(new PropertiesTokenRenderer(template, formatProvider));
                 }
                 else
                 {

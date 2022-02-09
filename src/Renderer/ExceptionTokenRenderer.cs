@@ -1,5 +1,4 @@
 using Serilog.Events;
-using System.IO;
 
 namespace TelegramSink.Renderer
 {
@@ -13,7 +12,8 @@ namespace TelegramSink.Renderer
             }
 
             var lines = new StringReader(logEvent.Exception.ToString());
-            string nextLine;
+
+            string? nextLine;
             while ((nextLine = lines.ReadLine()) != null)
             {
                 output.WriteLine(nextLine);

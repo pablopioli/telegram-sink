@@ -1,14 +1,12 @@
 using Serilog.Events;
-using System;
-using System.IO;
 
 namespace TelegramSink.Renderer
 {
     class MessageTemplateOutputTokenRenderer : OutputTemplateTokenRenderer
     {
-        private readonly IFormatProvider _formatProvider;
+        private readonly IFormatProvider? _formatProvider;
 
-        public MessageTemplateOutputTokenRenderer(IFormatProvider formatProvider)
+        public MessageTemplateOutputTokenRenderer(IFormatProvider? formatProvider)
         {
             _formatProvider = formatProvider;
         }

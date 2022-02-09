@@ -1,7 +1,6 @@
 ﻿using Serilog;
 using Serilog.Configuration;
 using Serilog.Events;
-using System;
 
 namespace TelegramSink
 {
@@ -11,7 +10,7 @@ namespace TelegramSink
             this LoggerSinkConfiguration config,
             string telegramApiKey,
             string telegramChatId,
-            IFormatProvider formatProvider = null,
+            IFormatProvider? formatProvider = null,
             LogEventLevel minimumLevel = LogEventLevel.Verbose)
         {
             return config.Sink(new TelegramSink(telegramApiKey, telegramChatId, minimumLevel, formatProvider));
